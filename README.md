@@ -8,4 +8,4 @@ for example ["The Architecture of Open Source Applications"](http://aosabook.org
 But no one about *testing* of free and opensource software.
 
 We plan to fix it and publish first such book with
-description about testing popular and mature software projects.
+description of testing and managing quality in popular and mature software projects.
