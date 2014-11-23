@@ -1,4 +1,4 @@
-Testing of open source software
+Book - Testing of free and open source software
 ===============================
 
 There are many books about developing free and opensource software:
