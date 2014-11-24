@@ -1,11 +1,21 @@
-language: c
+language: python
+python:
+  - "3.4"
 
 before_install:
-    - sudo apt-get update
-    - sudo apt-get install pandoc
+  - sudo apt-get update
+  - sudo apt-get install pandoc
 
 install:
-    - pandoc --version
+  - pandoc --version
+  - pip install requests markdown beautifulsoup4
 
 script:
-    - cd /tmp
+  - cd /tmp
+  - python check_urls.py README.md
+
+notifications:
+  email:
+    - estetus+travis-ci@gmail.com
+
+
