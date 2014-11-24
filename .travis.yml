@@ -13,8 +13,10 @@ install:
   - pandoc --version
   - pip install requests markdown beautifulsoup4
 
-#script:
-#  - make check_urls
+script:
+  - make build-epub
+  - make build-pdf
+  - make build-html
 
 notifications:
   email:
