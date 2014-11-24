@@ -5,9 +5,9 @@ python:
 before_install:
   - sudo apt-get update
   - sudo apt-get install pandoc
-  - curl -O -L https://github.com/IDPF/epubcheck/releases/download/v3.0/epubcheck-3.0.zip && unzip epubcheck-3.0.zip -d ~
+  - sudo apt-get install sun-java6-jre
+  - curl -O -L https://github.com/IDPF/epubcheck/releases/download/v3.0.1/epubcheck-3.0.1.zip && unzip epubcheck-3.0.1.zip -d ~
   - curl -o ~/kindlegen http://softcover-binaries.s3.amazonaws.com/kindlegen && chmod +x ~/kindlegen
-  - export PATH=$PATH:.
 
 install:
   - pandoc --version
@@ -17,6 +17,7 @@ script:
   - make build-epub
   - make build-mobi
   - make build-html
+  - make epubcheck
 
 notifications:
   email:
