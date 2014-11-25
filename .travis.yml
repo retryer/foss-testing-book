@@ -1,3 +1,8 @@
+#language: python
+
+#python:
+#  - 3.4
+
 language: java
 
 jdk:
@@ -11,7 +16,7 @@ before_install:
 
 install:
   - pandoc --version
-  - pip install requests markdown beautifulsoup4
+#  - pip install requests markdown beautifulsoup4
 
 script:
   - make build-epub
