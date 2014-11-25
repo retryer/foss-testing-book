@@ -1,28 +1,20 @@
-#language: python
+language: python
 
-#python:
-#  - 3.4
-
-language: java
-
-jdk:
-  - oraclejdk7
+python:
+  - 3.4
 
 before_install:
   - sudo apt-get update
   - sudo apt-get install pandoc
-  - curl -O -L https://github.com/IDPF/epubcheck/releases/download/v3.0.1/epubcheck-3.0.1.zip && unzip epubcheck-3.0.1.zip -d ~
   - curl -o ~/kindlegen http://softcover-binaries.s3.amazonaws.com/kindlegen && chmod +x ~/kindlegen
 
 install:
   - pandoc --version
-#  - pip install requests markdown beautifulsoup4
+  - pip install requests markdown beautifulsoup4
 
 script:
   - make build-epub
-  - make build-mobi
   - make build-html
-  - make epubcheck
 
 notifications:
   email:
