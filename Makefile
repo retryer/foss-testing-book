@@ -10,13 +10,13 @@ build-epub:
 		-o ${BOOK}.epub --smart --toc --epub-stylesheet=${STYLE} ${BOOK_SOURCE}
 
 build-mobi: build-epub
-	./kindlegen ${BOOK}.epub -c1 -verbose -o ${BOOK}.mobi
+	~/kindlegen ${BOOK}.epub -c1 -verbose -o ${BOOK}.mobi
 
 build-html:
 	pandoc --self-contained -o ${BOOK}.html ${BOOK_SOURCE}
 
 epubcheck: build-epub
-	java -jar epubcheck-3.0.1.jar ${BOOK}.epub
+	java -jar epubcheck-3.0.1/epubcheck-3.0.1.jar ${BOOK}.epub
 
 check_urls:
 	python check_urls.py ${BOOK_SOURCE}
