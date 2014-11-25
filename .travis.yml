@@ -3,7 +3,7 @@ python:
   - "3.4"
 
 before_install:
-  - sudo apt-get update; sudo apt-get upgrade
+  - sudo apt-get update; sudo apt-get upgrade -y
   - sudo apt-get install pandoc
   - sudo apt-get install sun-java6-jre
   - curl -O -L https://github.com/IDPF/epubcheck/releases/download/v3.0.1/epubcheck-3.0.1.zip && unzip epubcheck-3.0.1.zip -d ~
