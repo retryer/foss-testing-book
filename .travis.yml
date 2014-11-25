@@ -14,8 +14,7 @@ install:
   - pip install requests markdown beautifulsoup4
 
 script:
-  - make build-epub
-  - make build-html
+  - make book
   - make epubcheck
 
 notifications:

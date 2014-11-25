@@ -1,26 +1,35 @@
+BUILD = build
 STYLE = static/epub.css
-BOOK = foss-testing
+BOOKNAME = foss-testing
+TITLE = book-en/title.txt
+METADATA = book-en/metadata.xml
 COVER = static/cover.jpg
 BOOK_SOURCE = book-en/*.md
 
-.PHONY: build-epub build-mobi build-html check_urls clean
+book: epub mobi html
 
-build-epub:
-	pandoc -f markdown -t epub --epub-cover-image=${COVER} \
-		-o ${BOOK}.epub --smart --toc --epub-stylesheet=${STYLE} \
-		--epub-metadata=book-en/metadata.yaml ${BOOK_SOURCE}
+epub:
+	mkdir -p $(BUILD)/epub
+	pandoc -f markdown -t epub --epub-cover-image=$(COVER) \
+		-o $(BUILD)/epub/$(BOOKNAME).epub --smart --toc --epub-stylesheet=$(STYLE) \
+		--epub-metadata=book-en/metadata.xml $(BOOK_SOURCE) $(TITLE)
 
-build-mobi: build-epub
-	~/kindlegen ${BOOK}.epub -c1 -verbose -o ${BOOK}.mobi
+html:
+	mkdir -p $(BUILD)/html
+	pandoc --self-contained --to=html5 -o $(BUILD)/html/$(BOOKNAME).html $(BOOK_SOURCE)
 
-build-html:
-	pandoc --self-contained -o ${BOOK}.html ${BOOK_SOURCE}
+mobi: epub
+	mkdir -p $(BUILD)/mobi
+	~/kindlegen $(BUILD)/epub/$(BOOKNAME).epub -c1 -verbose -o $(BOOKNAME).mobi
+	mv $(BUILD)/epub/$(BOOKNAME).mobi $(BUILD)/mobi/$(BOOKNAME).mobi
 
-epubcheck: build-epub
-	java -jar ~/epubcheck-3.0.1/epubcheck-3.0.1.jar ${BOOK}.epub
+epubcheck: epub
+	java -jar ~/epubcheck-3.0.1/epubcheck-3.0.1.jar $(BUILD)/epub/$(BOOKNAME).epub
 
 check_urls:
-	python check_urls.py ${BOOK_SOURCE}
+	python check_urls.py $(BOOK_SOURCE)
 
 clean:
-	rm -f ${BOOK}.*
+	rm -r $(BUILD)
+
+.PHONY: epub mobi html check_urls clean
