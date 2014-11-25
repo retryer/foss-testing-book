@@ -7,6 +7,7 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install pandoc openjdk-7-jre
   - curl -o ~/kindlegen http://softcover-binaries.s3.amazonaws.com/kindlegen && chmod +x ~/kindlegen
+  - curl -O -L https://github.com/IDPF/epubcheck/releases/download/v3.0.1/epubcheck-3.0.1.zip && unzip epubcheck-3.0.1.zip -d ~
 
 install:
   - pandoc --version
@@ -15,9 +16,8 @@ install:
 script:
   - make build-epub
   - make build-html
+  - make epubcheck
 
 notifications:
   email:
     - estetus+travis-ci@gmail.com
-
-

@@ -16,7 +16,7 @@ build-html:
 	pandoc --self-contained -o ${BOOK}.html ${BOOK_SOURCE}
 
 epubcheck: build-epub
-	java -jar epubcheck-3.0.1/epubcheck-3.0.1.jar ${BOOK}.epub
+	java -jar ~/epubcheck-3.0.1/epubcheck-3.0.1.jar ${BOOK}.epub
 
 check_urls:
 	python check_urls.py ${BOOK_SOURCE}
