@@ -1,0 +1,2 @@
+% Testing and quality management of free and open source software
+% Sergey Bronnikov
