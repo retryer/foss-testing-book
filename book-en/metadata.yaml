@@ -1,0 +1,11 @@
+---
+title:
+- type: main
+  text: Testing and quality management of free and open source software
+- type: subtitle
+  text: An investigation of metadata
+creator:
+- role: author
+  text: Sergey Bronnikov
+publisher:  My Press
+rights:  (c) 2015 Sergey Bronnikov, CC BY-NC

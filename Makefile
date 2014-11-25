@@ -7,7 +7,8 @@ BOOK_SOURCE = book-en/*.md
 
 build-epub:
 	pandoc -f markdown -t epub --epub-cover-image=${COVER} \
-		-o ${BOOK}.epub --smart --toc --epub-stylesheet=${STYLE} ${BOOK_SOURCE}
+		-o ${BOOK}.epub --smart --toc --epub-stylesheet=${STYLE} \
+		--epub-metadata=book-en/metadata.yaml ${BOOK_SOURCE}
 
 build-mobi: build-epub
 	~/kindlegen ${BOOK}.epub -c1 -verbose -o ${BOOK}.mobi
