@@ -26,6 +26,9 @@ mobi: epub
 epubcheck: epub
 	java -jar ~/epubcheck-3.0.1/epubcheck-3.0.1.jar $(BUILD)/epub/$(BOOKNAME).epub
 
+langcheck:
+	 java -jar ~/LanguageTool-2.7/languagetool-commandline.jar -l en book-en/*.md
+
 check_urls:
 	python check_urls.py $(BOOK_SOURCE)
 
