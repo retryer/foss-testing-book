@@ -1,7 +1,7 @@
 Book - Testing and quality management of free and open source software
 ======================================================================
 
-[![Build Status](https://travis-ci.org/ligurio/tos-book.svg?branch=master)](https://travis-ci.org/ligurio/tos-book)
+[![Build Status](https://travis-ci.org/ligurio/foss-testing-book.svg?branch=master)](https://travis-ci.org/ligurio/foss-testing-book)
 
 There are many books about developing free and opensource software:
 for example ["The Architecture of Open Source Applications"](http://aosabook.org),
