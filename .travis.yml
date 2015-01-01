@@ -17,7 +17,7 @@ install:
 script:
   - make book
   - make epubcheck
-  - make langcheck
+#  - make langcheck
 
 notifications:
   email:
