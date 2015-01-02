@@ -17,4 +17,5 @@
 - <http://flosshub.org>
 - <http://flossmole.org>
 - <https://fossbazaar.org>
+- <http://www.reddit.com/r/fosstesting/>
 - <https://en.wikipedia.org/wiki/Test_Anything_Protocol>
