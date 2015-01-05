@@ -1,6 +1,7 @@
 # Tools and processes
 
 - Testing frameworks
+- Test report formats
 - Bug tracking
 - Continuous Testing
 - Code review
@@ -13,8 +14,9 @@
 	- gcov (http://yurichev.com/writings/C-notes-ru.pdf)
 	- systemtap
 - Continuous Integration (SaaS: travis-ci etc))
-- Bug bounty (статистика)
+- Bug bounty (statistics)
 - Automated testing
 - Manual testing
 - Security audit
 - negative testing (like fuzz testing, fault injection etc)
+- Customer Experience Program (statistics about using software by end users)
