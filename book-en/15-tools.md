@@ -1,22 +1,29 @@
 # Tools and processes
 
+- Specifications, standards etc
+- Gather information about user environments
+	* https://stats.openvz.org/
+	* http://www.nycbug.org/index.cgi?action=dmesgd
+	* dmesg@openbsd.org http://www.openbsd.org/faq/faq4.html#SendDmesg
 - Testing frameworks
 - Test report formats
+	* TAP (Test Anything Protocol)
+	* SubUnit
 - Bug tracking
-- Continuous Testing
+- Continuous Integration (SaaS: travis-ci etc))
+	https://github.com/ligurio/Continuous-Integration-services
 - Code review
-	- Casual code review - http://www.bsdcan.org/2012/schedule/attachments/218_crowdsec.pdf
-	- More eyes (Linus Law)
-- Unit testing
-- Performance testing
+	* Casual code review - http://www.bsdcan.org/2012/schedule/attachments/218_crowdsec.pdf
+	* More eyes (Linus Law)
+- Types of testing
+	* unit testing
+	* performance testing
+	* fuzz testing (https://fuzzing-project.org/)
+	* negative testing (like fuzz testing, fault injection etc)
 - Static and dynamics analysis of source code
 - Code coverage
 	- gcov (http://yurichev.com/writings/C-notes-ru.pdf)
 	- systemtap
-- Continuous Integration (SaaS: travis-ci etc))
 - Bug bounty (statistics)
-- Automated testing
-- Manual testing
+- Automated vs Manual testing
 - Security audit
-- negative testing (like fuzz testing, fault injection etc)
-- Customer Experience Program (statistics about using software by end users)
