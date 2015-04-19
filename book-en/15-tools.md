@@ -16,7 +16,7 @@
 	* Casual code review - http://www.bsdcan.org/2012/schedule/attachments/218_crowdsec.pdf
 	* More eyes (Linus Law)
 - Types of testing
-	* unit testing
+	* unit testing http://martinfowler.com/articles/testing-culture.html
 	* performance testing
 	* fuzz testing (https://fuzzing-project.org/)
 	* negative testing (like fuzz testing, fault injection etc)
