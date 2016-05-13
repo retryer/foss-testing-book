@@ -1,18 +1,18 @@
 BUILD = build
 STYLE = static/epub.css
-BOOKNAME = foss-testing
-TITLE = book-en/title.txt
-METADATA = book-en/metadata.xml
+BOOKNAME = software-test-formats
+TITLE = content/title.txt
+METADATA = content/metadata.xml
 COVER = static/cover.jpg
-BOOK_SOURCE = book-en/*.md
+BOOK_SOURCE = content/*.md
 
-book: epub mobi html
+book: epub html
 
 epub:
 	mkdir -p $(BUILD)/epub
 	pandoc -f markdown -t epub --epub-cover-image=$(COVER) \
 		-o $(BUILD)/epub/$(BOOKNAME).epub --smart --toc --epub-stylesheet=$(STYLE) \
-		--epub-metadata=book-en/metadata.xml $(BOOK_SOURCE) $(TITLE)
+		--epub-metadata=content/metadata.xml $(BOOK_SOURCE)
 
 html:
 	mkdir -p $(BUILD)/html
@@ -27,7 +27,7 @@ epubcheck: epub
 	java -jar ~/epubcheck-3.0.1/epubcheck-3.0.1.jar $(BUILD)/epub/$(BOOKNAME).epub
 
 langcheck:
-	 java -jar ~/LanguageTool-2.7/languagetool-commandline.jar -l en book-en/*.md
+	 java -jar ~/LanguageTool-2.7/languagetool-commandline.jar -l en content/*.md
 
 check_urls:
 	python check_urls.py $(BOOK_SOURCE)
